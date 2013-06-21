@@ -11,3 +11,7 @@
 |
 */
 Route::get('/', 'HomeController@showWelcome');
+
+Route::get('/store', 'StoreController@showWelcome');
+
+Route::get('/users', 'UserController@showWelcome');
