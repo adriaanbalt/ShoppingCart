@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{{ $seo_data['language'] }}"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="{{ $seo_data['language'] }}"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="{{ $seo_data['language'] }}"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ $seo_data['language'] }}"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="us-en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="us-en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="us-en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="us-en"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         
-        @if ($seo_data['title'] != '')
-        <title>{{ $seo_data['title'] }}</title>
-        @else
-        <title>{{ $seo_data['page_title'] }}</title>
-        @endif
+        <title>Shopping Cart</title>
         
-        <meta name="title" content="{{ $seo_data['title'] }}" />
-        <meta name="description" content="{{ $seo_data['description'] }}" />
-        <link rel="canonical" href="{{ $seo_data['canonical_url'] }}" />
+        <meta name="title" content="" />
+        <meta name="description" content="" />
+        <link rel="canonical" href="" />
         
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable = no' />
         <link rel="shortcut icon" href="./favicon.ico" >
@@ -60,6 +56,6 @@
         <!-- VENDORS -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
-        
+
     </body>
 </html>
