@@ -3,8 +3,7 @@
 class StoreController extends BaseController {
 
 	public function index()
-	{
-	
+	{	
 		// if (is_null($id)) {
 		// 	$id = 'home';
 		// }
@@ -45,6 +44,4 @@ class StoreController extends BaseController {
 
 		// $this->layout->with(array('seo_data' => $this->_get_seo_data($data)));
 	}
-
-
 }
