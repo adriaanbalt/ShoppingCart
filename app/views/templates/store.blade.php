@@ -1,4 +1,4 @@
 @section('content')
-<h1>This is the store</h1>
-<p>Lots of stores!</p>
+<h1>Store page</h1>
+<p>A list of stores</p>
 @stop
