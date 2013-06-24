@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends BaseController {
+class CategoryController extends BaseController {
 
 	public function index()
 	{

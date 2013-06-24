@@ -1,24 +1,10 @@
 <?php
 
-class HomeController extends BaseController {
-
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
+class StoreController extends BaseController {
 
 	public function index()
 	{
-		error_log('showLanding im here');
-
+	
 		// if (is_null($id)) {
 		// 	$id = 'home';
 		// }
@@ -55,16 +41,10 @@ class HomeController extends BaseController {
 		// 	)
 		// );
 
-		$this->layout->content = View::make('templates.hello');
+		$this->layout->content = View::make('templates.store');
 
 		// $this->layout->with(array('seo_data' => $this->_get_seo_data($data)));
 	}
 
-
-	public function showWelcome()
-	{
-		error_log('showWelcome im here');
-		return View::make('hello');
-	}
 
 }
