@@ -2,4 +2,12 @@
 /vendor
 composer.phar
 composer.lock
+*/config/development
+*/logs/log-*.php
+*/logs/!index.html
+*/cache/*
+*/cache/!index.html
+*/.sass-cache
+.sass-cache
+*/.DS_Store
 .DS_Store
