@@ -54,7 +54,7 @@ class HomeController extends BaseController {
 		// 	)
 		// );
 
-		$this->layout->content = View::make('hello');
+		$this->layout->content = View::make('templates.hello');
 
 		// $this->layout->with(array('seo_data' => $this->_get_seo_data($data)));
 	}
