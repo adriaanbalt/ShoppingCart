@@ -19,7 +19,7 @@ class HomeController extends BaseController {
 	{
 		error_log('showLanding im here');
 
-		$this->layout->content = View::make('templates.home');
+		$this->layout->content = View::make('templates.site.home');
 	}
 
 	public function showWelcome()

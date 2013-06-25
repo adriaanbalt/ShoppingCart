@@ -4,7 +4,7 @@ class CategoryController extends BaseController {
 
 	public function index()
 	{
-		$this->layout->content = View::make('templates.categories');
+		$this->layout->content = View::make('templates.site.categories');
 	}
 
 	public function showCategory( $id = null )
@@ -15,7 +15,7 @@ class CategoryController extends BaseController {
 
 		// retreives the data based on the $id
 
-		$this->layout->content = View::make('templates.category');
+		$this->layout->content = View::make('templates.site.category');
 	}
 
 }

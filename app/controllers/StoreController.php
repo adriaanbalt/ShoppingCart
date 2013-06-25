@@ -40,7 +40,7 @@ class StoreController extends BaseController {
 		// 	)
 		// );
 
-		$this->layout->content = View::make('templates.store');
+		$this->layout->content = View::make('templates.site.store');
 
 		// $this->layout->with(array('seo_data' => $this->_get_seo_data($data)));
 	}
