@@ -15,3 +15,5 @@ Route::get('/', 'HomeController@index');
 Route::get('/store', 'StoreController@index');
 
 Route::get('/users', 'UserController@index');
+
+Route::get('/admin', 'AdminController@index');
