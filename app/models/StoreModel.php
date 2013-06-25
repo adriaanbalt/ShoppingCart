@@ -1,6 +1,6 @@
 <?php
 
-class Store extends Eloquent {
+class StoreModel extends Eloquent {
     protected $guarded = array();
 
     public static $rules = array();
