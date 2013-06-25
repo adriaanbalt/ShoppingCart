@@ -1,6 +1,6 @@
 <?php
 
-class Navigatin extends Eloquent {
+class Navigation extends Eloquent {
     protected $guarded = array();
 
     public static $rules = array();
