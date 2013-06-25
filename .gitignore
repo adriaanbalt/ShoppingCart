@@ -14,3 +14,4 @@ composer.lock
 error.log
 access.log
 logs/*
+/app/config/database.php
