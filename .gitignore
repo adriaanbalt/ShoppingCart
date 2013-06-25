@@ -13,3 +13,4 @@ composer.lock
 .DS_Store
 error.log
 access.log
+logs/*
