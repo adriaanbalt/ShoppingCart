@@ -17,14 +17,11 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		error_log('showLanding im here');
-
 		$this->layout->content = View::make('templates.site.home');
 	}
 
 	public function showWelcome()
 	{
-		error_log('showWelcome im here');
 		return View::make('hello');
 	}
 

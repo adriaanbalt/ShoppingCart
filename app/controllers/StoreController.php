@@ -44,4 +44,29 @@ class StoreController extends BaseController {
 
 		// $this->layout->with(array('seo_data' => $this->_get_seo_data($data)));
 	}
+
+// everyone
+	// new store
+	// display single store
+	// display all stores
+
+
+// creator 
+	// delete store
+	// rename store
+	// add/update description
+	// get # of followers
+	// get orders
+	// add photo
+	// remove photo
+	// add item
+	// remove item
+
+
+// admin
+	// delete store
+	// rename store
+	// get orders
+
+
 }

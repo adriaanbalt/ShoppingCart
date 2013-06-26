@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends BaseController {
+class ItemController extends BaseController {
 
 	public function index()
 	{
@@ -18,26 +18,23 @@ class UserController extends BaseController {
 
 
 // everyone
-	// new user
-	// display single user
-	// display all users
+	// new item
 
 
 // creator 
-	// delete store
-	// rename store
+	// delete item
+	// rename item
 	// add/update description
-	// get # of followers
-	// get orders
-	// add photo to store
-	// remove photo from store
-	// add item to store
-	// remove item from store
+	// get past sales
+	// get oustanding sales
+	// get # of followers/likes
+	// add photo
+	// remove photo
 
 
 // admin
-	// delete store
-	// rename store
-	// get orders
+	// delete item
+	// rename item
+	// get past sales #
 
 }
