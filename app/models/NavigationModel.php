@@ -1,10 +1,14 @@
 <?php
 
-class Navigation extends Eloquent {
+class NavigationModel extends Eloquent {
     protected $guarded = array();
 
     public static $rules = array();
 
+    public function getNavigation()
+    {
+
+    }
 
 	public function getID()
 	{
