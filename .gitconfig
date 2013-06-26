@@ -1,0 +1,10 @@
+[user]
+	name = adriaanbalt
+	email = adriaan@balt.us
+[core]
+	editor = subl -w
+[credential]
+	helper = osxkeychain
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	s = status -sb
