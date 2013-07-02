@@ -8,6 +8,6 @@
  */
 View::composer('partials.navigation', function($view)
 {
-	$navigation = NavigationModel::getNavigation();
-	$view->with('navigation', $navigation);
+	$navigation = new NavigationModel;
+	$view->with('navigation', $navigation->getNavigation());
 });
