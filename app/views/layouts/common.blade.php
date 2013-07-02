@@ -32,7 +32,9 @@
     <body>
         <div id='main-wrapper'>
             <div id="main" role="main" class='clearfix'>
-                @include('partials.navigation')
+                <div id='navigation-main'>
+                    @include('partials.navigation')
+                </div>
                 <div id='content'>
                     @yield('content')
                 </div>
