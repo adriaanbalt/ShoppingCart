@@ -1,9 +1,9 @@
 <nav>
 	<ul>
+	@foreach( $navigation as $item )
 		<li>
-			<a href="/">Home</a>
-			<a href="/">Users</a>
-			<a href="/">Stores</a>
+			<a href="{{ $item['url'] }}">{{ $item['label'] }}</a>
 		</li>
+	@endforeach
 	</ul>
 </nav>
