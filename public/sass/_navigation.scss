@@ -1,0 +1,11 @@
+#navigation-main {
+	nav {
+		ul {
+			@extend .clearfix;
+			li{
+				float: left;
+				padding: .5em;
+			}
+		}
+	}
+}
