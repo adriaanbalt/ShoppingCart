@@ -2,43 +2,19 @@
 
 class NavigationModel extends Eloquent {
 
-	private $_navigation_data;
+	private $_navigation_data=null;
 
-    public function getNavigation()
-    {
-    	// Avoid asking the CMS for the same data more than once.
-		if ($this->_navigation_data) {
-			return $this->_navigation_data;
+	protected $table = 'navigation';
+
+	public static function getNavigation()
+	{
+		if ( !$this->_navigation_data ){
+			$_navigation_data = NavigationModel::all();
 		}
+		return $_navigation_data;
+	}
 
-		// Return cached version if available.
-		// $cache_enabled = Config::get('vars.cms_cache_enabled');
-		// $lang = Config::get('application.language');
-		$cur_uri = str_replace('/', '_', URI::current());
-		$key = 'navigation_data-' . $lang . '-' . $cur_uri;
-
-		// if ($cache_enabled) {
-		// 	if (Cache::has($key)) {
-		// 		return Cache::get($key);
-		// 	}
-		// }
-
-		// Get navigation from cms
-		$url = Config::get('vars.cms_base_url') . '/' . $lang . '/v1/navigation';
-		$data = json_decode($this->_make_curl_request($url));
-		$builder = new Red\Builder;
-		$this->_navigation_data = buildNavigation($data);
-
-		// Cache the object if configured to do so.
-		if ($cache_enabled) {
-			$ttl_minutes = Config::get('vars.cms_cache_ttl') / 60;
-			Cache::put($key, $this->_navigation_data, $ttl_minutes);
-		}
-
-		return $this->_navigation_data;
-    }
-
-    /**
+	/**
 	 * Build the navigation object for use by the templates
 	 *
 	 * @param Object $data The data returned by the CMS.
