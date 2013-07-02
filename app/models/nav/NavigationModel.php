@@ -8,9 +8,7 @@ class NavigationModel extends Eloquent {
 
 	public static function getNavigation()
 	{
-		if ( !$this->_navigation_data ){
 			$_navigation_data = NavigationModel::all();
-		}
 		return $_navigation_data;
 	}
 
