@@ -68,9 +68,12 @@ class NavigationModel extends Eloquent {
 		return $nav;
 	}
 
-	public function getSubnav()
+	public function getSubnav( $id )
 	{
+		// get subnav based on foreign key
+		// $this->where('id','=','nav_id')
 
+		$this->where('id','=','nav_id')->hasMany('SubNavItemModel');
 	}
 	public function setSubnav()
 	{

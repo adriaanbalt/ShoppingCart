@@ -1,34 +1,16 @@
 <?php
 
-class SubNavItemModel extends Model {
+class SubNavItemModel extends Eloquent {
 
-	private $subnav = array();
+	protected $table = 'subnavigation';
 
-	private $url;
+	// public function addSubNavItem( $subNavItem )
+	// {
+	// 	$this->subnav[] = $subNavItem;
+	// 	return $this;
+	// }
 
-	public function setUrl($url)
-	{
-		$this->url = $url;
-		return $this;
-	}
-
-	public function getUrl()
-	{
-		return $url;
-	}
-
-	public function addSubNavItem( $subNavItem )
-	{
-		$this->subnav[] = $subNavItem;
-		return $this;
-
-	}
-
-	public function getSubNav()
-	{
-		return $this->subnav;
-	}
-
+	
 }
 
 
