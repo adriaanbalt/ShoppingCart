@@ -25,8 +25,13 @@ class Model extends Eloquent
 
 	public function setTitle($title)
 	{
-		$this->title = $title;
+		$this->label = $title;
 		return $this;
+	}
+
+	public function getTitle()
+	{
+		return $this->get('label');
 	}
 
 	public function setUrlTitle($urlTitle)
