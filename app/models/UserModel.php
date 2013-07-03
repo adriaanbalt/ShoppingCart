@@ -46,32 +46,32 @@ class UserModel extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	public function getReminderEmail()
 	{
-		return $this->email;
+		return $this->hasOne('email');
 	}
 
 	public function getID()
 	{
-		return $this->id;
+		return $this->hasOne('id');
 	}
 
 	public function getUsername()
 	{
-		return $this->username;
+		return $this->hasOne('username');
 	}
 
 	public function getName()
 	{
-		return $this->name;
+		return $this->hasOne('name');
 	}
 
 	public function getAddress()
 	{
-		return $this->address;
+		return $this->hasOne('address');
 	}
 
 	public function getTelephone()
 	{
-		return $this->telephone;
+		return $this->hasOne('telephone');
 	}
 
 	public function getFavorites()
@@ -79,9 +79,9 @@ class UserModel extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->favorites;
 	}
 
-	public function getPhoto()
+	public function getAvatar()
 	{
-		return $this->photo;
+		return $this->hasOne('avatar');
 	}
 
 }
