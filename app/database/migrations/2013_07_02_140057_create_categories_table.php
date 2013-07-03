@@ -17,11 +17,19 @@ class CreateCategoriesTable extends Migration {
             $table->engine ='InnoDB';
             $table->increments('id');
             
-            $table->integer('store_id');
-            $table->foreign('store_id')->references('id')->on('stores');
+            $table->integer('store_id')->unsigned();
+            $table->foreign('store_id')
+            	->references('id')
+            	->on('stores')
+                ->on_delete('restrict')
+                ->on_update('cascade');
 
-            $table->integer('item_id');
-            $table->foreign('item_id')->references('id')->on('items');
+            $table->integer('item_id')->unsigned();
+            $table->foreign('item_id')
+            	->references('id')
+            	->on('items')
+                ->on_delete('restrict')
+                ->on_update('cascade');
 
             $table->string('label');
 

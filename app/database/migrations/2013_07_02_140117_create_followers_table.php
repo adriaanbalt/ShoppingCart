@@ -12,9 +12,26 @@ class CreateFollowersTable extends Migration {
 	 */
 	public function up()
 	{
-        $table->engine ='InnoDB';
-		$table->foreign('store_id')->references('id')->on('stores');
-		$table->foreign('user_id')->references('id')->on('stores');
+		Schema::create('followers', function(Blueprint $table)
+		{
+	        $table->engine ='InnoDB';
+			
+			$table->integer('store_id')->unsigned();
+			$table->foreign('store_id')
+				->references('id')
+				->on('stores')
+	            ->on_delete('restrict')
+	            ->on_update('cascade');
+			
+			$table->integer('user_id')->unsigned();
+			$table->foreign('user_id')
+				->references('id')
+				->on('stores')
+	            ->on_delete('restrict')
+	            ->on_update('cascade');
+	        
+	        $table->timestamps();
+		}
 	}
 
 	/**

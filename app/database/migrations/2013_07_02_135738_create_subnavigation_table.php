@@ -18,12 +18,14 @@ class CreateSubnavigationTable extends Migration {
             $table->increments('id');
             $table->string('label');
             $table->string('url');
+            
             $table->integer('nav_id')->unsigned();
             $table->foreign('nav_id')
             	->references('id')
             	->on('navigation')
                 ->on_delete('restrict')
                 ->on_update('cascade');
+            
             $table->timestamps();
 		});
 	}

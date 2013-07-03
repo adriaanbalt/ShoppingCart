@@ -15,10 +15,30 @@ class CreateItemsTable extends Migration {
 		Schema::create('items', function(Blueprint $table)
 		{
             $table->engine ='InnoDB';
+
             $table->increments('id');
-            $table->foreign('category_id')->references('id')->on('categories');
-            $table->foreign('store_id')->references('id')->on('stores');
-            $table->foreign('user_id')->references('id')->on('users');
+            
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')
+            	->references('id')
+            	->on('categories')
+                ->on_delete('restrict')
+                ->on_update('cascade');
+
+            $table->integer('store_id')->unsigned();
+            $table->foreign('store_id')
+            	->references('id')
+            	->on('stores')
+                ->on_delete('restrict')
+                ->on_update('cascade');
+
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
+            	->references('id')
+            	->on('users')
+                ->on_delete('restrict')
+                ->on_update('cascade');
+
             $table->string('name');
             $table->integer('price');
             $table->integer('quantity');

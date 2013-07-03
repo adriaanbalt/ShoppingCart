@@ -15,9 +15,11 @@ class CreateNavigationTable extends Migration {
 		Schema::create('navigation', function(Blueprint $table)
 		{
             $table->engine ='InnoDB';
+            
             $table->increments('id');
             $table->string('label');
             $table->string('url');
+
             $table->timestamps();
 		});
 	}
