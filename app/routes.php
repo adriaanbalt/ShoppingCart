@@ -12,7 +12,7 @@
 */
 Route::get('/', 'HomeController@index');
 
-Route::get('/stores', 'StoreController@index');
+Route::get('/shop', 'CategoryController@index');
 // Route::group(array('domain' => 'stores.myapp.com'), function()
 // {
 //     Route::get('/users', 'UserController@index');

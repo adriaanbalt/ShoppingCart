@@ -20,6 +20,13 @@ class CreateNavigationTable extends Migration {
             $table->string('label');
             $table->string('url');
 
+            $table->integer('color_id')->unsigned();
+            $table->foreign('color_id')
+            	->references('id')
+            	->on('colors')
+                ->on_delete('restrict')
+                ->on_update('cascade');
+
             $table->timestamps();
 		});
 	}

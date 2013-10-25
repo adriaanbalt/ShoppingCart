@@ -49,7 +49,7 @@ class CreateStoresTable extends Migration {
 	        $table->string('followers')->unique();
 
 	        $table->timestamps();
-	    }
+	    });
 	}
 
 	/**

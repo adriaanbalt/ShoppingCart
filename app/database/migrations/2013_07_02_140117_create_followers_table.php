@@ -31,7 +31,7 @@ class CreateFollowersTable extends Migration {
 	            ->on_update('cascade');
 	        
 	        $table->timestamps();
-		}
+		});
 	}
 
 	/**

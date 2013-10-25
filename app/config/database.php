@@ -52,14 +52,25 @@ return array(
 			'prefix'   => '',
 		),
 
-		'mysql' => array(
+		'mysql_local' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'database',
+			'database'  => 'db_shopcart',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
+
+		'mysql' => array(
+			'driver'    => 'mysql',
+			'host'     => 'mysql.balt.us',
+			'database' => 'db_shopcart',
+			'username' => 'shopcart_temp',
+			'password' => 'SuperTemp',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci', 
 			'prefix'    => '',
 		),
 

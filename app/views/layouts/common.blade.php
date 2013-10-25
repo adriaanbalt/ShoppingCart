@@ -30,20 +30,22 @@
         <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
-        <div id='main-wrapper'>
-            <div id="main" role="main" class='clearfix'>
-                <div id='navigation-main'>
+        <div id="main" role="main" class='clearfix'>
+            <header>
+                <div class='wrapper'>
                     @include('partials.navigation')
                 </div>
-                <div id='content'>
+            </header>
+            <div id='content'>
+                <div class='wrapper'>
                     @yield('content')
                 </div>
-                <div id='sidebar'>
-                    @include('partials.sidebar')
-                </div>
             </div>
-            <!-- /#main -->
+            <div id='sidebar'>
+                @include('partials.sidebar')
+            </div>
         </div>
+        <!-- /#main -->
 
         <!-- Add your own Google Analytics UA number or remove this snippet -->
         <script>

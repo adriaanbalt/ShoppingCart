@@ -1,10 +1,15 @@
-#navigation-main {
-	nav {
-		ul {
-			@extend .clearfix;
-			li{
-				float: left;
-				padding: .5em;
+nav {
+	ul {
+		@extend .clearfix;
+		li{
+			float: left;
+			padding: .5em;
+			text-transform: uppercase;
+			a {
+				text-decoration: none;
+				&:hover{
+					
+				}
 			}
 		}
 	}
