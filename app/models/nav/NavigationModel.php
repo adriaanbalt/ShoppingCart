@@ -14,6 +14,14 @@ class NavigationModel extends Eloquent {
 		return $_navigation_data;
 	}
 
+	public function getColor( $id )
+	{
+		if ( !$this->_navigation_data ){
+			$_navigation_data = NavigationModel::all();
+		}
+		return $_navigation_data;
+	}
+
 	/**
 	 * Build the navigation object for use by the templates
 	 *
