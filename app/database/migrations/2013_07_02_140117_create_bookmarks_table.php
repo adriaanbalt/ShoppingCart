@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFollowersTable extends Migration {
+class CreateBookmarksTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateFollowersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('followers', function(Blueprint $table)
+		Schema::create('bookmarks', function(Blueprint $table)
 		{
 	        $table->engine ='InnoDB';
 			
@@ -41,7 +41,7 @@ class CreateFollowersTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('bookmarks');
 	}
 
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoriesTable extends Migration {
+class CreatePivotStoreCategoriesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,10 @@ class CreateCategoriesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('categories', function(Blueprint $table)
+		Schema::create('store_categories', function(Blueprint $table)
 		{
             $table->engine ='InnoDB';
-            $table->increments('id');
-            
+
             $table->integer('store_id')->unsigned();
             $table->foreign('store_id')
             	->references('id')
@@ -24,14 +23,12 @@ class CreateCategoriesTable extends Migration {
                 ->on_delete('restrict')
                 ->on_update('cascade');
 
-            $table->integer('item_id')->unsigned();
-            $table->foreign('item_id')
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')
             	->references('id')
-            	->on('items')
+            	->on('storecategories')
                 ->on_delete('restrict')
                 ->on_update('cascade');
-
-            $table->string('label');
 
             $table->timestamps();
 		});
@@ -44,6 +41,6 @@ class CreateCategoriesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('categories');
+		Schema::drop('store_categories');
 	}
 }

@@ -12,8 +12,6 @@ class CreateItemPhotosTable extends Migration {
 	 */
 	public function up()
 	{
-		//
-		$table->foreign('item_id')->references('id')->on('items');
 	}
 
 	/**

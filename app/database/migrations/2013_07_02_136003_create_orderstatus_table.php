@@ -12,7 +12,15 @@ class CreateOrderStatusTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('order_status', function(Blueprint $table)
+		{
+			$table->engine ='InnoDB';
+
+			$table->increments('id');
+			$table->string('status');
+
+			$table->timestamps();
+		});
 	}
 
 	/**
@@ -22,7 +30,7 @@ class CreateOrderStatusTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('order_status');
 	}
 
 }

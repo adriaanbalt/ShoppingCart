@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrdersTable extends Migration {
+class CreatePivotOrdersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration {
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')
             	->references('id')
-            	->on('categories')
+            	->on('itemcategories')
                 ->on_delete('restrict')
                 ->on_update('cascade');
 
