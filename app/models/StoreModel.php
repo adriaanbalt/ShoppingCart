@@ -52,6 +52,11 @@ class StoreModel extends Eloquent {
 		return $this->avgVisits;
 	}
 
+	public function getCategories()
+	{
+		return $this->belongsToMany('CategoryModel');
+	}
+
 }
 
 
