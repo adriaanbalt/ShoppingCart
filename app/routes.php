@@ -13,6 +13,9 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('/shop', 'CategoryController@index');
+
+Route::get('/item', 'ItemController@getItem');
+
 // Route::group(array('domain' => 'stores.myapp.com'), function()
 // {
 //     Route::get('/users', 'UserController@index');
@@ -30,7 +33,7 @@ Route::get('/users', 'UserController@index');
 // {
 //     Route::get('/users', 'UserController@index');
 // });
-Route::get('/users/{name}', 'UserController@getSpecificUser');
+Route::get('/users/{name}', 'UserController@getUser');
 
 Route::get('/admin', 'AdminController@index');
 
