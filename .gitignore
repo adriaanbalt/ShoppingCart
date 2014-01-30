@@ -11,7 +11,9 @@ composer.lock
 .sass-cache
 */.DS_Store
 .DS_Store
-error.log
-access.log
+*/error.log
+*/access.log
+logs/error.log
+logs/access.log
 logs/*
 /app/config/database.php
