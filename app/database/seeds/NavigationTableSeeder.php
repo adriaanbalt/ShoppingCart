@@ -29,22 +29,22 @@ class NavigationTableSeeder extends Seeder {
 			array(
 			        'label' => 'Home',
 			        'url'  => '/',
-			        'color_id' => 0
-			),
-			array(
-			        'label' => 'Shop',
-			        'url'  => 'shop',
 			        'color_id' => 1
 			),
 			array(
-			        'label' => 'Contact',
-			        'url'  => 'contact',
+			        'label' => 'Shop',
+			        'url'  => '/shop',
 			        'color_id' => 2
 			),
 			array(
-			        'label' => 'FAQ',
-			        'url'  => 'faq',
+			        'label' => 'Contact',
+			        'url'  => '/contact',
 			        'color_id' => 3
+			),
+			array(
+			        'label' => 'FAQ',
+			        'url'  => '/faq',
+			        'color_id' => 4
 			)
         );
 
