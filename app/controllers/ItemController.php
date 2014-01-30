@@ -2,19 +2,16 @@
 
 class ItemController extends BaseController {
 
-	public function index()
-	{
-		$this->layout->content = View::make('templates.site.users');
-	}
 
-	public function getSpecificUser( $id )
+	public function getItem( $id )
 	{
 		// get data specific to $name
 
 		error_log( $id );
 
-		$this->layout->content = View::make('templates.site.user');
+		$this->layout->content = View::make('templates.site.item');
 	}
+
 
 
 // everyone
