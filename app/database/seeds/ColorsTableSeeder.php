@@ -1,11 +1,11 @@
 <?php
 
-class NavigationTableSeeder extends Seeder {
+class ColorsTableSeeder extends Seeder {
 
     public function run()
     {
     	// Uncomment the below to wipe the table clean before populating
-    	DB::table('navigation')->delete();
+    	DB::table('colors')->delete();
 
 		// $color_one = DB::table('colors')
 		//     ->select('id')
@@ -25,31 +25,27 @@ class NavigationTableSeeder extends Seeder {
 		//     ->first()
 		//     ->id;
 
-        $navigation = array(
+        $colors = array(
 			array(
-			        'label' => 'Home',
-			        'url'  => '/',
-			        'color_id' => 0
+			        'label' => 'white',
+			        'hex'  => '#fff'
 			),
 			array(
-			        'label' => 'Shop',
-			        'url'  => 'shop',
-			        'color_id' => 1
+			        'label' => 'green',
+			        'hex'  => '#0f0'
 			),
 			array(
-			        'label' => 'Contact',
-			        'url'  => 'contact',
-			        'color_id' => 2
+			        'label' => 'red',
+			        'hex'  => '#f00'
 			),
 			array(
-			        'label' => 'FAQ',
-			        'url'  => 'faq',
-			        'color_id' => 3
+			        'label' => 'blue',
+			        'hex'  => '#00f'
 			)
         );
 
         // Uncomment the below to run the seeder
-        DB::table('navigation')->insert($navigation);
+        DB::table('colors')->insert($colors);
     }
 
 }
