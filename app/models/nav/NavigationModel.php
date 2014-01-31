@@ -11,6 +11,9 @@ class NavigationModel extends Eloquent {
 		if ( !$this->_navigation_data ){
 			$_navigation_data = NavigationModel::all();
 		}
+		
+		debug("build nav " . print_r($_navigation_data, true) . "\n" );
+
 		return $_navigation_data;
 	}
 
@@ -28,8 +31,10 @@ class NavigationModel extends Eloquent {
 	 * @param Object $data The data returned by the CMS.
 	 * @return Object
 	 */
-	private function buildNavigation($data)
+	private function buildNavigation( $data )
 	{
+
+
 		$nav = new Navigation;
 
 		// Determine current location
