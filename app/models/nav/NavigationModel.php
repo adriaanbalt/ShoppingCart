@@ -5,7 +5,6 @@ class NavigationModel extends Model {
 	private $nav = null;
 
 	private $navArr = array();
-	private $subNavArr = array();
 	private $selected = 'home';
 	private $selectedSub = '';
 
@@ -19,7 +18,6 @@ class NavigationModel extends Model {
 			$this->buildNavigation( NavigationModel::all() );
 		}
 
-		debug( print_r( NavigationModel::find(2)->subnav, true ) . "\n" );
 
 		return $this->navArr;
 	}
@@ -43,7 +41,7 @@ class NavigationModel extends Model {
 		$nav = $this;
 
 		// Determine current location
-		$uri_segments = explode('/', trim(Request::root(), '/'));
+		$uri_segments = Request::segments();
 		$cur_section = 'home';
 		$cur_subsection = '';
 		$num_segments = count($uri_segments);
@@ -55,27 +53,26 @@ class NavigationModel extends Model {
 		}
 
 		foreach ($data as $n) {
+
+
 			$nav_item = new NavItemModel;
 			$nav_item->setID( $n->attributes['id'] );
 			$nav_item->setTitle( $n->attributes['title'] );
 			$nav_item->setUrl( $n->attributes['url'] );
 			$nav_item->setColor( $n->attributes['color_id'] );
 
+			$subnav = NavigationModel::find($n->attributes['id'])->subnav;
 
-			// foreach ($n->subnav as $s) {
-			// 	$subnav_item = new SubNavItemModel;
-			// 	$subnav_item->setTitle($s->title);
-			// 	$subnav_item->setUrlTitle($s->urlTitle);
-			// 	// $subnav_item->setChannel($s->channel);
+			foreach ( $subnav as $s ) {
+				$nav_item->addSubNavItem( $s );
+			}
 
-			// 	$nav_item->addSubNavItem($subnav_item);
-			// }
+			if ($cur_section == $n->url) {
+				// $nav->setSubnav($nav_item->getSubnav());
+				$nav->setSelectedItem($n->url);
+			}
 
-			// if ($cur_section == $n->url) {
-			// 	$nav->setSubnav($nav_item->getSubnav());
-			// 	$nav->setSelectedItem($n->url);
-			// }
-
+			debug( $n->url . "\n" );
 			$nav->addNavItem($nav_item);
 		}
 
@@ -102,20 +99,7 @@ class NavigationModel extends Model {
 
 	public function subnav()
 	{
-		// get subnav based on foreign key
-		// $this->where('id','=','nav_id')
-
-		/*
-			
-		*/
         return $this->hasMany('SubNavItemModel',"nav_id");
-
-		// $this->where( $id ,'=','nav_id')->hasMany('SubNavItemModel');
-	}
-	public function setSubnav( $subnav )
-	{
-		$this->subNavArr = $subnav;
-		return $this;
 	}
 
 	public function getSelectedItem()
