@@ -8,42 +8,66 @@
 class Model extends Eloquent
 {
 	/**
+	 * The ID of this element
+	 */
+	protected $id;
+
+	/**
 	 * The title of the content or landing page.
 	 */
 	protected $title;
 
 	/**
-	 * The string that is used to get the details for the content
-	 * from the CMS.
+	 * 
 	 */
-	protected $urlTitle;
+	protected $template;
 
 	/**
 	 * The type of content model this object represents (EE channel)
 	 */
 	protected $type;
 
+
+	public function setID( $id )
+	{
+		$this->id = $id;
+		return $this;
+	}
+    public function getID()
+	{
+		return $this->id;
+	}
+
+
 	public function setTitle($title)
 	{
-		$this->label = $title;
+		$this->title = $title;
 		return $this;
 	}
-
 	public function getTitle()
 	{
-		return $this->get('label');
+		return $this->title;
 	}
 
-	public function setUrlTitle($urlTitle)
-	{
-		$this->urlTitle = $urlTitle;
-		return $this;
-	}
 
 	public function setType($type)
 	{
 		$this->type = $type;
 		return $this;
 	}
+	public function getType()
+	{
+		return $this->type;
+	}
 
+
+	public function setTemplate($template)
+	{
+		$this->template = $template;
+		return $this;
+	}
+	public function getTemplate()
+	{
+		return $this->template;
+	}
 }

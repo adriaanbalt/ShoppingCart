@@ -1,13 +1,18 @@
 <?php
 
-class ColorModel extends Eloquent {
+class ColorModel extends Model {
 
+	private $_colors = null;
+	
 	protected $table = 'colors';
 
-    public function getID()
-	{
-		return $this->id;
+	public function getAll() {
+		if ( !$this->_colors ){
+			$_colors = ColorModel::all();
+		}
+		return $_colors;
 	}
+
 
     public function getLabel()
 	{

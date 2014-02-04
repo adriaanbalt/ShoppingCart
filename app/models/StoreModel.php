@@ -1,15 +1,11 @@
 <?php
 
-class StoreModel extends Eloquent {
+class StoreModel extends Model {
     protected $guarded = array();
 
     public static $rules = array();
 
 
-	public function getID()
-	{
-		return $this->id;
-	}
 
 	public function getUserID()
 	{
