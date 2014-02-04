@@ -16,7 +16,7 @@ class CreateSubnavigationTable extends Migration {
 		{
             $table->engine ='InnoDB';
             $table->increments('id');
-            $table->string('label');
+            $table->string('title');
             $table->string('url');
             
             $table->integer('nav_id')->unsigned();

@@ -17,7 +17,7 @@ class CreateNavigationTable extends Migration {
             $table->engine ='InnoDB';
             
             $table->increments('id');
-            $table->string('label');
+            $table->string('title');
             $table->string('url');
 
             $table->integer('color_id')->unsigned();

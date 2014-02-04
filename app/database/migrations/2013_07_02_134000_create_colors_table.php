@@ -17,7 +17,7 @@ class CreateColorsTable extends Migration {
 
             $table->increments('id');
             
-            $table->string('label');
+            $table->string('title');
             $table->string('hex');
             
             $table->timestamps();
