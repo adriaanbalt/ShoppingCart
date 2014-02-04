@@ -4,9 +4,9 @@ class SubNavItemModel extends Model {
 
 	protected $table = 'subnavigation';
 
-	public function navitem()
+	public function NavigationModel()
 	{
-        return $this->belongsTo('NavItemModel');
+        return $this->belongsTo('NavigationModel');
 	}
 
 	

@@ -19,6 +19,7 @@ class NavigationModel extends Model {
 			$this->buildNavigation( NavigationModel::all() );
 		}
 
+		debug( print_r( NavigationModel::find(2)->subnav, true ) . "\n" );
 
 		return $this->navArr;
 	}
@@ -60,7 +61,6 @@ class NavigationModel extends Model {
 			$nav_item->setUrl( $n->attributes['url'] );
 			$nav_item->setColor( $n->attributes['color_id'] );
 
-			debug( print_r( $nav_item->getSubnav(), true ) . "\n" );
 
 			// foreach ($n->subnav as $s) {
 			// 	$subnav_item = new SubNavItemModel;
@@ -100,7 +100,7 @@ class NavigationModel extends Model {
 		return $this;
 	}
 
-	public function getSubnav( $id )
+	public function subnav()
 	{
 		// get subnav based on foreign key
 		// $this->where('id','=','nav_id')
@@ -108,8 +108,9 @@ class NavigationModel extends Model {
 		/*
 			
 		*/
+        return $this->hasMany('SubNavItemModel',"nav_id");
 
-		$this->where( $id ,'=','nav_id')->hasMany('SubNavItemModel');
+		// $this->where( $id ,'=','nav_id')->hasMany('SubNavItemModel');
 	}
 	public function setSubnav( $subnav )
 	{
