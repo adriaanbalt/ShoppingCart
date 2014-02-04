@@ -10,32 +10,32 @@ class NavigationTableSeeder extends Seeder {
 		$navigation = array(
 			array(
 					'title' => 'HOUSE',
-					'url'  => '/house',
+					'url'  => 'house',
 					'color_id' => 4
 			),
 			array(
 					'title' => 'CLOTHES',
-					'url'  => '/clothes',
+					'url'  => 'clothes',
 					'color_id' => 1
 			),
 			array(
 					'title' => 'ELECTRONICS',
-					'url'  => '/electronics',
+					'url'  => 'electronics',
 					'color_id' => 4
 			),
 			array(
 					'title' => 'ART',
-					'url'  => '/art',
+					'url'  => 'art',
 					'color_id' => 3
 			),
 			array(
 					'title' => 'BOOKS',
-					'url'  => '/books',
+					'url'  => 'books',
 					'color_id' => 4
 			),
 			array(
 					'title' => 'MUSIC',
-					'url'  => '/music',
+					'url'  => 'music',
 					'color_id' => 1
 			)
 		);
