@@ -26,3 +26,9 @@ Running All Outstanding Migrations For A Package
 
 php artisan migrate --package=vendor/package
 Note: If you receive a "class not found" error when running migrations, try running the composer dump-autoload command.
+
+## Database login details
+host: 		mysql.balt.us
+username: 	shopcart_temp
+password: 	SuperTemp
+database: 	db_shopcart
