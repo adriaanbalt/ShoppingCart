@@ -44,11 +44,6 @@ class SubNavigationTableSeeder extends Seeder {
 					'nav_id' => 4
 			),
 			array(
-					'title' => 'PANTS',
-					'url'  => '/pants',
-					'nav_id' => 2
-			),
-			array(
 					'title' => 'UNDERWEAR',
 					'url'  => '/underwear',
 					'nav_id' => 2
@@ -56,22 +51,17 @@ class SubNavigationTableSeeder extends Seeder {
 			array(
 					'title' => 'PANTS',
 					'url'  => '/pants',
-					'nav_id' => 3
+					'nav_id' => 2
 			),
 			array(
 					'title' => 'LINGERIE',
 					'url'  => '/lingerie',
-					'nav_id' => 3
+					'nav_id' => 2
 			),
 			array(
 					'title' => 'DRESSES',
 					'url'  => '/dresses',
-					'nav_id' => 3
-			),
-			array(
-					'title' => 'TOYS',
-					'url'  => '/toys',
-					'nav_id' => 3
+					'nav_id' => 2
 			)
 		);
 
