@@ -2,54 +2,46 @@
 
 class NavigationTableSeeder extends Seeder {
 
-    public function run()
-    {
-    	// Uncomment the below to wipe the table clean before populating
-    	DB::table('navigation')->delete();
+	public function run()
+	{
+		// Uncomment the below to wipe the table clean before populating
+		DB::table('navigation')->delete();
 
-		// $color_one = DB::table('colors')
-		//     ->select('id')
-		//     ->where('label', 'admin')
-		//     ->first()
-		//     ->id;
-
-		// $color_two = DB::table('colors')
-		//     ->select('id')
-		//     ->where('label', 'admin')
-		//     ->first()
-		//     ->id;
-
-		// $color_three = DB::table('colors')
-		//     ->select('id')
-		//     ->where('label', 'admin')
-		//     ->first()
-		//     ->id;
-
-        $navigation = array(
+		$navigation = array(
 			array(
-			        'label' => 'Home',
-			        'url'  => '/',
-			        'color_id' => 1
+					'title' => 'HOUSE',
+					'url'  => '/house',
+					'color_id' => 4
 			),
 			array(
-			        'label' => 'Shop',
-			        'url'  => '/shop',
-			        'color_id' => 2
+					'title' => 'CLOTHES',
+					'url'  => '/clothes',
+					'color_id' => 1
 			),
 			array(
-			        'label' => 'Contact',
-			        'url'  => '/contact',
-			        'color_id' => 3
+					'title' => 'ELECTRONICS',
+					'url'  => '/electronics',
+					'color_id' => 4
 			),
 			array(
-			        'label' => 'FAQ',
-			        'url'  => '/faq',
-			        'color_id' => 4
+					'title' => 'ART',
+					'url'  => '/art',
+					'color_id' => 3
+			),
+			array(
+					'title' => 'BOOKS',
+					'url'  => '/books',
+					'color_id' => 4
+			),
+			array(
+					'title' => 'MUSIC',
+					'url'  => '/music',
+					'color_id' => 1
 			)
-        );
+		);
 
-        // Uncomment the below to run the seeder
-        DB::table('navigation')->insert($navigation);
-    }
+		// Uncomment the below to run the seeder
+		DB::table('navigation')->insert($navigation);
+	}
 
 }
