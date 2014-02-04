@@ -1,6 +1,13 @@
 <?php
 
-class NavigationModel extends Eloquent {
+class NavigationModel extends Model {
+
+	private $nav = null;
+
+	private $navArr = array();
+	private $subNavArr = array();
+	private $selected = 'home';
+	private $selectedSub = '';
 
 	private $_navigation_data=null;
 
@@ -8,21 +15,20 @@ class NavigationModel extends Eloquent {
 
 	public function getNavigation()
 	{
-		if ( !$this->_navigation_data ){
-			$_navigation_data = NavigationModel::all();
+		if ( count($this->navArr) <= 0){
+			$this->buildNavigation( NavigationModel::all() );
 		}
-		
-		debug("build nav " . print_r($_navigation_data, true) . "\n" );
 
-		return $_navigation_data;
+
+		return $this->navArr;
 	}
 
 	public function getColor( $id )
 	{
-		if ( !$this->_navigation_data ){
-			$_navigation_data = NavigationModel::all();
-		}
-		return $_navigation_data;
+		$_color = ColorModel::getAll();
+		
+
+		return $_color;
 	}
 
 	/**
@@ -33,12 +39,10 @@ class NavigationModel extends Eloquent {
 	 */
 	private function buildNavigation( $data )
 	{
-
-
-		$nav = new Navigation;
+		$nav = $this;
 
 		// Determine current location
-		$uri_segments = explode('/', trim(\Laravel\URI::current(), '/'));
+		$uri_segments = explode('/', trim(Request::root(), '/'));
 		$cur_section = 'home';
 		$cur_subsection = '';
 		$num_segments = count($uri_segments);
@@ -51,34 +55,49 @@ class NavigationModel extends Eloquent {
 
 		foreach ($data as $n) {
 			$nav_item = new NavItemModel;
-			$nav_item->setTitle($n->title);
-			$nav_item->setUrlTitle($n->urlTitle);
-			$nav_item->setUrl($n->url);
+			$nav_item->setID( $n->attributes['id'] );
+			$nav_item->setTitle( $n->attributes['title'] );
+			$nav_item->setUrl( $n->attributes['url'] );
+			$nav_item->setColor( $n->attributes['color_id'] );
 
-			foreach ($n->subnav as $s) {
-				$subnav_item = new SubNavItemModel;
-				$subnav_item->setTitle($s->title);
-				$subnav_item->setUrlTitle($s->urlTitle);
-				// $subnav_item->setChannel($s->channel);
+			debug( print_r( $nav_item->getSubnav(), true ) . "\n" );
 
-				$nav_item->addSubNavItem($subnav);
-			}
+			// foreach ($n->subnav as $s) {
+			// 	$subnav_item = new SubNavItemModel;
+			// 	$subnav_item->setTitle($s->title);
+			// 	$subnav_item->setUrlTitle($s->urlTitle);
+			// 	// $subnav_item->setChannel($s->channel);
 
-			if ($cur_section == $n->url) {
-				$nav->setSubnav($nav_item->getSubnav());
-				$nav->setSelectedItem($n->url);
-			}
+			// 	$nav_item->addSubNavItem($subnav_item);
+			// }
 
-			$nav->addItem($nav_item);
+			// if ($cur_section == $n->url) {
+			// 	$nav->setSubnav($nav_item->getSubnav());
+			// 	$nav->setSelectedItem($n->url);
+			// }
+
+			$nav->addNavItem($nav_item);
 		}
 
-		foreach ($nav->getSubnav() as $s) {
-			if ($cur_subsection == $s->getUrlTitle()) {
-				$nav->getSelectedSubItem($s->getUrlTitle());
-			}
-		}
+		// foreach ($nav->getSubnav() as $s) {
+		// 	if ($cur_subsection == $s->getUrlTitle()) {
+		// 		$nav->getSelectedSubItem($s->getUrlTitle());
+		// 	}
+		// }
 
 		return $nav;
+	}
+
+
+	public function getNav()
+	{
+		return $this->navArr;
+	}
+
+	public function addNavItem( $item )
+	{
+		$this->navArr[] = $item;
+		return $this;
 	}
 
 	public function getSubnav( $id )
@@ -86,37 +105,37 @@ class NavigationModel extends Eloquent {
 		// get subnav based on foreign key
 		// $this->where('id','=','nav_id')
 
-		$this->where('id','=','nav_id')->hasMany('SubNavItemModel');
-	}
-	public function setSubnav()
-	{
+		/*
+			
+		*/
 
+		$this->where( $id ,'=','nav_id')->hasMany('SubNavItemModel');
+	}
+	public function setSubnav( $subnav )
+	{
+		$this->subNavArr = $subnav;
+		return $this;
 	}
 
 	public function getSelectedItem()
 	{
-
+		return $this->$selected;
 	}
-	public function setSelectedItem()
+	public function setSelectedItem( $str )
 	{
-		
+		$this->selected = $str;
+		return $this;
 	}
 
 	public function getSelectedSubItem()
 	{
-
+		return $this->selectedSub;
 	}
-	public function setSelectedSubItem()
+	public function setSelectedSubItem( $str )
 	{
-
+		$this->selectedSub = $str;
+		return $this;
 	}
-
-	public function addItem()
-	{
-
-	}
-
-	
 
 }
 

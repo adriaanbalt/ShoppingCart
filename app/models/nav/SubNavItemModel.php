@@ -1,14 +1,13 @@
 <?php
 
-class SubNavItemModel extends Eloquent {
+class SubNavItemModel extends Model {
 
 	protected $table = 'subnavigation';
 
-	// public function addSubNavItem( $subNavItem )
-	// {
-	// 	$this->subnav[] = $subNavItem;
-	// 	return $this;
-	// }
+	public function navitem()
+	{
+        return $this->belongsTo('NavItemModel');
+	}
 
 	
 }

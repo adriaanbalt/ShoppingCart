@@ -2,16 +2,21 @@
 
 class NavItemModel extends Model {
 
-	private $subnav = array();
+	protected $subnav = array();
 
-	private $url;
+	protected $color_id;
+
+	protected $url;
+
+	public function NavItemModel () {
+		// here i could get the subnav base don the $id
+	}
 
 	public function setUrl($url)
 	{
 		$this->url = $url;
 		return $this;
 	}
-
 	public function getUrl()
 	{
 		return $url;
@@ -21,16 +26,24 @@ class NavItemModel extends Model {
 	{
 		$this->subnav[] = $subNavItem;
 		return $this;
-
 	}
 
-	public function getSubNav()
+	public function getSubnav()
+    {
+        return $this->hasMany('SubNavItemModel');
+    }
+
+
+	public function setColor( $color_id )
 	{
-		return $this->subnav;
+		$this->color_id = $color_id;
+		return $this;
 	}
-
+	public function getColor()
+	{
+		return $this->color_id;
+	}
 }
-
 
 /*
 	id				primary key		unique identifier ie: 283208234
