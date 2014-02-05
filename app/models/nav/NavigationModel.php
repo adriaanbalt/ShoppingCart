@@ -72,7 +72,6 @@ class NavigationModel extends Model {
 				$nav->setSelectedItem($n->url);
 			}
 
-			debug( $n->url . "\n" );
 			$nav->addNavItem($nav_item);
 		}
 

@@ -7,3 +7,6 @@
 	@endforeach
 	</ul>
 </nav>
+<div>
+	<select id="searchbox" name="q" placeholder="Search products or categories..." class="form-control"></select>
+</div>
