@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBookmarksTable extends Migration {
+class CreatePivotStoreFollowersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,25 +12,25 @@ class CreateBookmarksTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('bookmarks', function(Blueprint $table)
+		Schema::create('store_followers', function(Blueprint $table)
 		{
-	        $table->engine ='InnoDB';
+			$table->engine ='InnoDB';
 			
 			$table->integer('store_id')->unsigned();
 			$table->foreign('store_id')
 				->references('id')
 				->on('stores')
-	            ->on_delete('restrict')
-	            ->on_update('cascade');
+				->on_delete('restrict')
+				->on_update('cascade');
 			
 			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')
 				->references('id')
 				->on('stores')
-	            ->on_delete('restrict')
-	            ->on_update('cascade');
-	        
-	        $table->timestamps();
+				->on_delete('restrict')
+				->on_update('cascade');
+			
+			$table->timestamps();
 		});
 	}
 
@@ -41,7 +41,7 @@ class CreateBookmarksTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('bookmarks');
+		Schema::drop('store_followers');
 	}
 
 }

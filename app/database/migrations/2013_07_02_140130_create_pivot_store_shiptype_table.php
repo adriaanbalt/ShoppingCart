@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePivotProductCategoriesTable extends Migration {
+class CreatePivotStoreShiptypeTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,21 +12,21 @@ class CreatePivotProductCategoriesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('product_categories', function(Blueprint $table)
+		Schema::create('store_shiptype', function(Blueprint $table)
 		{
             $table->engine ='InnoDB';
 
-            $table->integer('product_id')->unsigned();
-            $table->foreign('product_id')
+            $table->integer('store_id')->unsigned();
+            $table->foreign('store_id')
             	->references('id')
-            	->on('products')
+            	->on('stores')
                 ->on_delete('restrict')
                 ->on_update('cascade');
 
-            $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')
+            $table->integer('shiptype_id')->unsigned();
+            $table->foreign('shiptype_id')
             	->references('id')
-            	->on('productcategories')
+            	->on('shiptype')
                 ->on_delete('restrict')
                 ->on_update('cascade');
 
@@ -38,9 +38,9 @@ class CreatePivotProductCategoriesTable extends Migration {
 	 * Reverse the migrations.
 	 *
 	 * @return void
-	 */ 
+	 */
 	public function down()
 	{
-		Schema::drop('product_categories');
+		Schema::drop('store_shiptype');
 	}
 }

@@ -18,13 +18,19 @@ class CreateProductsTable extends Migration {
 
 			$table->increments('id');
 
-			$table->string('name');
+			$table->string('hash')->unique();
+			$table->string('title');
 			$table->integer('price');
 			$table->integer('quantity');
 			$table->string('description');
-			$table->boolean('ship')->default(1);
-			$table->integer('ship_rate');
-			$table->string('hash')->unique();
+			$table->boolean('shiptype')->default(1);
+			$table->integer('likes');
+
+			$table->integer('shiprate_id');
+			$table->integer('productcategory_id');
+			$table->integer('store_id');
+			$table->integer('user_id');
+			$table->integer('photo_id');
 			
 			$table->timestamps();
 		});

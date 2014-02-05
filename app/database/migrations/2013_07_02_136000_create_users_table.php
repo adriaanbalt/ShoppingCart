@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration {
 			$table->increments('id');
 			
 			$table->string('username')->unique();
+			$table->string('name');
 			$table->string('first_name');
 			$table->string('last_name');
 			$table->string('email');
@@ -27,6 +28,8 @@ class CreateUsersTable extends Migration {
 			$table->string('telephone');
 			$table->string('avatar');
 			$table->string('following');
+			$table->string('store_id');
+			
 			$table->timestamps();
 		});
 	}

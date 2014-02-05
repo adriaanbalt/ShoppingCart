@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStoreLikesTable extends Migration {
+class CreateProductLikesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,15 @@ class CreateStoreLikesTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		
+		Schema::create('product_likes', function(Blueprint $table)
+		{
+			$table->engine ='InnoDB';
+
+			$table->increments('id');
+
+			$table->timestamps();
+		});
 	}
 
 	/**
@@ -22,7 +30,7 @@ class CreateStoreLikesTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('product_likes');
 	}
 
 }
