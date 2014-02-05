@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemLikesTable extends Migration {
+class CreateProductPhotosTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,6 @@ class CreateItemLikesTable extends Migration {
 	 */
 	public function up()
 	{
-		//
 	}
 
 	/**

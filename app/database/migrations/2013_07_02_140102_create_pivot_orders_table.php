@@ -20,7 +20,7 @@ class CreatePivotOrdersTable extends Migration {
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')
             	->references('id')
-            	->on('itemcategories')
+            	->on('productcategories')
                 ->on_delete('restrict')
                 ->on_update('cascade');
 
@@ -31,10 +31,10 @@ class CreatePivotOrdersTable extends Migration {
                 ->on_delete('restrict')
                 ->on_update('cascade');
 
-            $table->integer('item_id')->unsigned();
-            $table->foreign('item_id')
+            $table->integer('product_id')->unsigned();
+            $table->foreign('product_id')
             	->references('id')
-            	->on('items')
+            	->on('products')
                 ->on_delete('restrict')
                 ->on_update('cascade');
 

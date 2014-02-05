@@ -1,8 +1,8 @@
 
 <h1>SIDEBAR!!</h1>
 <ul>
-    <li>Item One</li>
-    <li>Item Two</li>
-    <li>Item Three</li>
-    <li>Item Four</li>
+    <li>Product One</li>
+    <li>Product Two</li>
+    <li>Product Three</li>
+    <li>Product Four</li>
 </ul>

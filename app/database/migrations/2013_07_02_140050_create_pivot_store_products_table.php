@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePivotUserItemsTable extends Migration {
+class CreatePivotStoreProductsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,21 +12,21 @@ class CreatePivotUserItemsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('user_items', function(Blueprint $table)
+		Schema::create('store_products', function(Blueprint $table)
 		{
             $table->engine ='InnoDB';
 
-            $table->integer('users_id')->unsigned();
-            $table->foreign('users_id')
+            $table->integer('store_id')->unsigned();
+            $table->foreign('store_id')
             	->references('id')
-            	->on('users')
+            	->on('stores')
                 ->on_delete('restrict')
                 ->on_update('cascade');
 
-            $table->integer('item_id')->unsigned();
-            $table->foreign('item_id')
+            $table->integer('product_id')->unsigned();
+            $table->foreign('product_id')
             	->references('id')
-            	->on('items')
+            	->on('products')
                 ->on_delete('restrict')
                 ->on_update('cascade');
 
@@ -41,6 +41,6 @@ class CreatePivotUserItemsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('user_items');
+		Schema::drop('store_products');
 	}
 }
