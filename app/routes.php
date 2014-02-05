@@ -14,7 +14,7 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/shop', 'CategoryController@index');
 
-Route::get('/item', 'ItemController@getItem');
+Route::get('/product', 'ProductController@getItem');
 
 // Route::group(array('domain' => 'stores.myapp.com'), function()
 // {
@@ -37,3 +37,4 @@ Route::get('/users/{name}', 'UserController@getUser');
 
 Route::get('/admin', 'AdminController@index');
 
+Route::get('/api/search', 'ApiSearchController@index');

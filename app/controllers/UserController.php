@@ -31,8 +31,8 @@ class UserController extends BaseController {
 	// get orders
 	// add photo to store
 	// remove photo from store
-	// add item to store
-	// remove item from store
+	// add product to store
+	// remove product from store
 
 
 // admin

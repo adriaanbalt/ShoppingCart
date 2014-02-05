@@ -1,4 +1,4 @@
 @section('content')
-<h1>ITEM!</h1>
+<h1>PRODUCT!</h1>
 @stop
 

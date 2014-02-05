@@ -61,7 +61,7 @@ class StoreModel extends Model {
 	user id			foreign key		reference to user
 	storename		text			letters, numbers, underscores
 	name			text			visual	BIG RED BICYCLE
-	average price?	varchar			average of all items in the store
+	average price?	varchar			average of all products in the store
 	location		varchar			physical location in the world
 	followers		foreign key		
 	avg visit/day	number			private to the username owner

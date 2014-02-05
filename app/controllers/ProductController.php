@@ -1,26 +1,26 @@
 <?php
 
-class ItemController extends BaseController {
+class ProductController extends BaseController {
 
 
-	public function getItem( $id )
+	public function getProduct( $id )
 	{
 		// get data specific to $name
 
 		error_log( $id );
 
-		$this->layout->content = View::make('templates.site.item');
+		$this->layout->content = View::make('templates.site.product');
 	}
 
 
 
 // everyone
-	// new item
+	// new product
 
 
 // creator 
-	// delete item
-	// rename item
+	// delete product
+	// rename product
 	// add/update description
 	// get past sales
 	// get oustanding sales
@@ -30,8 +30,8 @@ class ItemController extends BaseController {
 
 
 // admin
-	// delete item
-	// rename item
+	// delete product
+	// rename product
 	// get past sales #
 
 }

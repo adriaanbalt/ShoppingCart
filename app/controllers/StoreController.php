@@ -59,8 +59,8 @@ class StoreController extends BaseController {
 	// get orders
 	// add photo
 	// remove photo
-	// add item
-	// remove item
+	// add product
+	// remove product
 
 
 // admin

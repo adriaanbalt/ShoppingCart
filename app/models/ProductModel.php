@@ -1,6 +1,6 @@
 <?php
 
-class ItemModel extends Model {
+class ProductModel extends Model {
     protected $guarded = array();
 
     public static $rules = array();
