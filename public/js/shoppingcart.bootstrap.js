@@ -66,6 +66,7 @@ window.SHOPCART = (function(self, window, undefined){
 			optgroupField: 'class',
 			optgroupOrder: ['product','category'],
 			load: function(query, callback) {
+				console.log ( "here ya go ", query );
 				if (!query.length) return callback();
 				$.ajax({
 					url: root+'/api/search',
@@ -74,7 +75,8 @@ window.SHOPCART = (function(self, window, undefined){
 					data: {
 						q: query
 					},
-					error: function() {
+					error: function(e) {
+						console.log ( "ajax error ", e );
 						callback();
 					},
 					success: function(res) {
