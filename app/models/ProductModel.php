@@ -1,10 +1,8 @@
 <?php
 
 class ProductModel extends Model {
-    protected $guarded = array();
 
-    public static $rules = array();
-
+	protected $table = 'products';
 
 	public function getUserID()
 	{
