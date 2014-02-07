@@ -5,7 +5,7 @@ class CategoryModel extends Model {
 
     public static $rules = array();
 
-
+	protected $table = 'productcategories';
 
 	public function getUserID()
 	{
