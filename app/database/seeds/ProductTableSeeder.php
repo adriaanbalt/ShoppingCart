@@ -9,6 +9,7 @@ class ProductTableSeeder extends Seeder {
 
 		$products = array(
 			array(
+					'status' => 'published',
 					'hash' => 'product_1',
 					'title' => 'product 1',
 					'price' => 100,
@@ -23,6 +24,7 @@ class ProductTableSeeder extends Seeder {
 					'photo_id' => 1
 			),
 			array(
+					'status' => 'published',
 					'hash' => 'product_2',
 					'title' => 'product 2',
 					'price' => 100,
@@ -37,6 +39,7 @@ class ProductTableSeeder extends Seeder {
 					'photo_id' => 1
 			),
 			array(
+					'status' => 'published',
 					'hash' => 'product_3',
 					'title' => 'product 3',
 					'price' => 100,
@@ -51,6 +54,7 @@ class ProductTableSeeder extends Seeder {
 					'photo_id' => 1
 			),
 			array(
+					'status' => 'published',
 					'hash' => 'product_4',
 					'title' => 'product 4',
 					'price' => 100,
@@ -65,6 +69,7 @@ class ProductTableSeeder extends Seeder {
 					'photo_id' => 1
 			),
 			array(
+					'status' => 'published',
 					'hash' => 'product_5',
 					'title' => 'product 5',
 					'price' => 100,
@@ -79,6 +84,7 @@ class ProductTableSeeder extends Seeder {
 					'photo_id' => 1
 			),
 			array(
+					'status' => 'published',
 					'hash' => 'product_6',
 					'title' => 'product 6',
 					'price' => 100,

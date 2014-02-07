@@ -17,6 +17,8 @@ class CreatePhotosTable extends Migration {
 			$table->engine ='InnoDB';
 
 			$table->increments('id');
+			
+			$table->string('status');
 			$table->string('title');
 			$table->string('url');
 

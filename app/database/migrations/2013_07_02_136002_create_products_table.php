@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration {
 
 			$table->increments('id');
 
+			$table->string('status');
 			$table->string('hash')->unique();
 			$table->string('title');
 			$table->integer('price');

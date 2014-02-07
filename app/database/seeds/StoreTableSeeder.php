@@ -9,6 +9,7 @@ class StoreTableSeeder extends Seeder {
 
 		$stores = array(
 			array(
+					'status' => 'published',
 					'hash' => 'store1',
 					'title' => 'store 1',
 					'description' => 'the first store description is a large but simple group of text',
@@ -20,6 +21,7 @@ class StoreTableSeeder extends Seeder {
 					'photo_id' => 1
 			),
 			array(
+					'status' => 'published',
 					'hash' => 'store2',
 					'title' => 'store 2',
 					'description' => 'the first store description is a large but simple group of text',
@@ -31,6 +33,7 @@ class StoreTableSeeder extends Seeder {
 					'photo_id' => 1
 			),
 			array(
+					'status' => 'published',
 					'hash' => 'store3',
 					'title' => 'store 3',
 					'description' => 'the first store description is a large but simple group of text',
@@ -42,6 +45,7 @@ class StoreTableSeeder extends Seeder {
 					'photo_id' => 1
 			),
 			array(
+					'status' => 'published',
 					'hash' => 'store4',
 					'title' => 'store 4',
 					'description' => 'the first store description is a large but simple group of text',
@@ -53,6 +57,7 @@ class StoreTableSeeder extends Seeder {
 					'photo_id' => 1
 			),
 			array(
+					'status' => 'published',
 					'hash' => 'store5',
 					'title' => 'store 5',
 					'description' => 'the first store description is a large but simple group of text',
@@ -64,6 +69,7 @@ class StoreTableSeeder extends Seeder {
 					'photo_id' => 1
 			),
 			array(
+					'status' => 'published',
 					'hash' => 'store6',
 					'title' => 'store 6',
 					'description' => 'the first store description is a large but simple group of text',
