@@ -21,6 +21,7 @@ class ApiSearchController extends BaseController {
 	{
 		// operate on the item passed by reference, adding the url based on slug
 		foreach ($data as $key => & $item) {
+			debug( print_r($item) );
 			$item['url'] = url($prefix.'/'.$item['hash']);
 		}
 		return $data;
@@ -40,7 +41,7 @@ class ApiSearchController extends BaseController {
 					->where('title','like','%'.$query.'%')
 					->orderBy('title','asc')
 					->take(5)
-					->get(array('title'))->toArray();
+					->get(array('hash','title'))->toArray();
 	
 		// $categories = ProductCategoryModel::where('title','like','%'.$query.'%')
 		// 			->has('products')
